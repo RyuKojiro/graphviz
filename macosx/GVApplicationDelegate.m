@@ -35,4 +35,14 @@
 	_applicationStarted = YES;
 }
 
+- (void) convertPasteboardToGraph:(NSPasteboard *)pasteboard
+						 userData:(NSString *)userData
+							error:(NSString **)error {
+	NSString *uniqueId = [NSString stringWithFormat:@"%lf", CFAbsoluteTimeGetCurrent()];
+	NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:uniqueId];
+	path = [path stringByAppendingPathExtension:@"gv"];
+	[[pasteboard dataForType:@"NSStringPboardType"] writeToFile:path atomically:YES];
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:path]];
+}
+
 @end
