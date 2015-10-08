@@ -91,5 +91,25 @@
 			</dict>
 		</dict>
 	</array>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSRequiredContext</key>
+			<array/>
+			<key>NSPortName</key>
+			<string>graphviz</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSMessage</key>
+			<string>convertPasteboardToGraph</string>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Render with GraphViz…</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
